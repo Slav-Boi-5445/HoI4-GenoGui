@@ -1,0 +1,36 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_open_genocide_menu_bg"
+		texturefile = "gfx/interface/open_genocide_menu_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_open_genocide_menu_button"
+		texturefile = "gfx/interface/open_genocide_menu_button.dds"
+	}
+	spriteType = {
+		name = "GFX_genocide_menu_bg"
+		texturefile = "gfx/interface/genocide_menu_bg.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_genocide_progress_bg"
+		textureFile = "gfx/interface/genocide_progress_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_genocide_progress"
+		texturefile = "gfx/interface/genocide_progress_full.dds"
+		legacy_lazy_load = no
+		noOfFrames = 41
+	}
+	spriteType = {
+		name = "GFX_removal_status_indicator"
+		texturefile = "gfx/interface/removal_status_indicator.dds"
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_removal_level_set_indicator"
+		texturefile = "gfx/interface/removal_level_set_indicator.dds"
+		noOfFrames = 4
+	}
+}

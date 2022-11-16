@@ -1,0 +1,339 @@
+scripted_gui = {
+	genocide_state_menu = {
+	
+		context_type = selected_state_context
+		
+		window_name = "genocide_state_menu_container"
+		
+		
+		visible = {
+			ROOT = { 
+				OR = {
+				has_government = fascism
+				has_government = communisM
+				}
+			}
+			has_state_flag = current_geno_menu_open
+			#is_controlled_by = ROOT
+		}
+		
+		effects = {
+			cancel_genocide_button_click = {
+				ROOT = { clr_country_flag = removal_in_progress }
+				set_variable = { var = removal_status_bar_level value = 1 }
+				clear_variable = removal_level_set
+			}
+			close_genocide_menu_button_click = {
+				clr_state_flag = current_geno_menu_open
+				ROOT = {
+				clr_country_flag = geno_info_menu_open
+				clr_country_flag = geno_menu_open
+				clr_country_flag = geno_debug_menu_open
+				clr_country_flag = geno_help_menu_open
+				clr_country_flag = help_removal_geno
+				clr_country_flag = help_general_geno
+				clr_country_flag = help_close_geno
+				clr_country_flag = help_cancel_geno
+				}
+				clear_variable = removal_level_set
+			}
+			execute_genocide_button_click = {
+				if = {
+					limit = {
+						NOT = { is_core_of = owner }
+					}
+					ROOT = {
+						genocide_event_effect = yes
+					}
+				}
+				set_state_flag = current_genocide
+				ROOT = { set_country_flag = removal_in_progress }
+				if = {
+					limit = {
+						check_variable = { var = removal_level_set value = 2 compare = equals }
+					}
+					ROOT = {
+						add_political_power = -10
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { var = removal_level_set value = 3 compare = equals }
+					}
+					ROOT = {
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = -50
+						}
+						add_political_power = -30
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { var = removal_level_set value = 4 compare = equals }
+					}
+					ROOT = {
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = -100
+						}
+						add_equipment_to_stockpile = {
+							type = support_equipment 
+							amount = -20
+						}
+						add_political_power = -40
+					}
+				}
+			}
+			level_one_removal_button_click = {
+				set_variable = { var = removal_level_set value = 2 }
+			}
+			level_two_removal_button_click = {
+				set_variable = { var = removal_level_set value = 3 }
+			}
+			level_three_removal_button_click = {
+				set_variable = { var = removal_level_set value = 4 }
+			}
+			open_debug_menu_button_click = {
+				ROOT = {
+				clr_country_flag = geno_info_menu_open
+				clr_country_flag = geno_help_menu_open
+				clr_country_flag = help_removal_geno
+				clr_country_flag = help_general_geno
+				clr_country_flag = help_close_geno
+				clr_country_flag = help_cancel_geno
+				}
+				ROOT = { if = { limit = { has_country_flag = geno_debug_menu_open }
+				clr_country_flag = geno_debug_menu_open
+				else = { set_country_flag = geno_debug_menu_open } } }
+				
+			}
+			help_menu_button_click = {
+				ROOT = {
+				clr_country_flag = geno_info_menu_open
+				clr_country_flag = geno_debug_menu_open
+				clr_country_flag = help_removal_geno
+				clr_country_flag = help_general_geno
+				clr_country_flag = help_close_geno
+				clr_country_flag = help_cancel_geno
+				}
+				ROOT = { if = { limit = { has_country_flag = geno_help_menu_open }
+				clr_country_flag = geno_help_menu_open
+				else = { set_country_flag = geno_help_menu_open } } }
+			}
+			info_menu_button_click = {
+				ROOT = {
+				clr_country_flag = geno_debug_menu_open
+				clr_country_flag = geno_help_menu_open
+				clr_country_flag = help_removal_geno
+				clr_country_flag = help_general_geno
+				clr_country_flag = help_close_geno
+				clr_country_flag = help_cancel_geno
+				}
+				ROOT = { if = { limit = { has_country_flag = geno_info_menu_open }
+				clr_country_flag = geno_info_menu_open
+				else = { set_country_flag = geno_info_menu_open } } }
+			}
+		}
+		triggers = {
+			execute_genocide_button_click_enabled = {
+				is_controlled_by = ROOT
+				ROOT = { NOT = { has_country_flag = removal_in_progress } }
+				check_variable = { var = removal_status_state_level value = 3 compare = less_than }
+				check_variable = { var = removal_level_set value = 0 compare = greater_than }
+			}
+			close_genocide_menu_button_click_enabled = {
+				ROOT = { NOT = { has_country_flag = removal_in_progress } }
+			}
+			cancel_genocide_button_click_enabled = {
+			ROOT = { has_country_flag = removal_in_progress }
+			}
+			level_one_removal_button_click_enabled = {
+				is_controlled_by = ROOT
+				ROOT = { NOT = { has_country_flag = removal_in_progress } }
+				ROOT = { has_political_power > 10 }
+				check_variable = { var = removal_status_state_level value = 3 compare = less_than }
+			}
+			level_two_removal_button_click_enabled = {
+				is_controlled_by = ROOT
+				ROOT = { NOT = { has_country_flag = removal_in_progress } }
+				ROOT = {
+					OR = {
+						has_equipment = { infantry_equipment_0 > 50 }
+						has_equipment = { infantry_equipment_1 > 50 }
+						has_equipment = { infantry_equipment_2 > 50 }
+						has_equipment = { infantry_equipment_3 > 50 }
+					}
+					has_political_power > 30
+				}
+				check_variable = { var = removal_status_state_level value = 3 compare = less_than }
+			}
+			level_three_removal_button_click_enabled = {
+				is_controlled_by = ROOT
+				ROOT = { NOT = { has_country_flag = removal_in_progress } }
+				ROOT = {
+					OR = {
+						has_equipment = { infantry_equipment_0 > 100 }
+						has_equipment = { infantry_equipment_1 > 100 }
+						has_equipment = { infantry_equipment_2 > 100 }
+						has_equipment = { infantry_equipment_3 > 100 }
+					}
+					has_equipment = { support_equipment_1 > 20 }
+					has_political_power > 40
+				}
+				check_variable = { var = removal_status_state_level value = 3 compare = less_than }
+			}
+			open_debug_menu_button_visible = {
+			is_debug = yes
+			}
+		}
+		properties = {
+			progress_bar = {
+			frame = removal_status_bar_level
+			}
+		}
+		properties = {
+			removal_status_indicator = {
+			frame = removal_status_state_level
+			}
+		}
+		properties = {
+			removal_level_set_indicator = {
+			frame = removal_level_set
+			}
+		}
+	}
+}
+
+scripted_gui = {
+	geno_debug_menu_thingy = {
+	
+		context_type = selected_state_context
+		parent_window_name = "genocide_state_menu_container"
+		window_name = "geno_debug_menu_thingy"
+		
+		
+		visible = {
+			ROOT = { 
+				OR = {
+				has_government = fascism
+				has_government = communism
+				}
+				has_country_flag = geno_debug_menu_open
+			}
+			has_state_flag = current_geno_menu_open
+		}
+		
+		effects = {
+			#cancel_genocide_button_click = {
+			#	ROOT = { clr_country_flag = removal_in_progress }
+			#}
+			
+			
+			
+			#### test
+			test_kill_button_click = {
+				genocide_completion_effect = yes
+			}
+			test_up_stat_button_click = {
+				add_to_variable = { var = removal_status_state_level value = 1 }
+			}
+		}
+		triggers = {
+			#cancel_genocide_button_click_enabled = {
+			#ROOT = { has_country_flag = removal_in_progress }
+			#}
+		}
+	}
+}
+scripted_gui = {
+	geno_info_menu = {
+	
+		context_type = selected_state_context
+		parent_window_name = "genocide_state_menu_container"
+		window_name = "geno_info_menu"
+		
+		
+		visible = {
+			ROOT = { 
+				OR = {
+				has_government = fascism
+				has_government = communism
+				}
+				has_country_flag = geno_info_menu_open
+			}
+			has_state_flag = current_geno_menu_open
+		}
+		
+		effects = {
+			#cancel_genocide_button_click = {
+			#	ROOT = { clr_country_flag = removal_in_progress }
+			#}
+		}
+		triggers = {
+			#cancel_genocide_button_click_enabled = {
+			#ROOT = { has_country_flag = removal_in_progress }
+			#}
+		}
+	}
+}
+scripted_gui = {
+	geno_help_menu = {
+	
+		context_type = selected_state_context
+		parent_window_name = "genocide_state_menu_container"
+		window_name = "geno_help_menu_container"
+		
+		
+		visible = {
+			ROOT = { 
+				OR = {
+				has_government = fascism
+				has_government = communism
+				}
+				has_country_flag = geno_help_menu_open
+			}
+			has_state_flag = current_geno_menu_open
+		}
+		
+		effects = {
+			help_general_button_click = {
+				ROOT = {
+				set_country_flag = help_general_geno
+				clr_country_flag = help_close_geno
+				clr_country_flag = help_removal_geno
+				clr_country_flag = help_cancel_geno
+				}
+			}
+			help_removal_button_click = {
+				ROOT = {
+				set_country_flag = help_removal_geno
+				clr_country_flag = help_general_geno
+				clr_country_flag = help_close_geno
+				clr_country_flag = help_cancel_geno
+				}
+			}
+			help_cancel_button_click = {
+				ROOT = {
+				set_country_flag = help_cancel_geno
+				clr_country_flag = help_general_geno
+				clr_country_flag = help_close_geno
+				clr_country_flag = help_removal_geno
+				}
+			}
+			help_close_button_click = {
+				ROOT = {
+				set_country_flag = help_close_geno
+				clr_country_flag = help_general_geno
+				clr_country_flag = help_removal_geno
+				clr_country_flag = help_cancel_geno
+				}
+			}
+		}
+		triggers = {
+			#cancel_genocide_button_click_enabled = {
+			#ROOT = { has_country_flag = removal_in_progress }
+			#}
+		}
+	}
+}

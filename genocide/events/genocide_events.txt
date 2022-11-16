@@ -1,0 +1,139 @@
+
+add_namespace = genocide
+
+
+## genocide resent
+country_event = {
+	id = genocide.1
+	title = genocide.1.t
+	desc = genocide.1.d
+	picture = GFX_report_event_tur_kurdish_guerillas
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Sounds like they need a lesson."
+		effect_tooltip = {
+		#current_genocide
+			PREV = {
+			add_resistance = 20
+			add_compliance = -10
+			}
+		}
+	}
+}
+
+## genocide fear
+country_event = {
+	id = genocide.2
+	title = genocide.2.t
+	desc = genocide.2.d
+	picture = GFX_report_event_generic_rally2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "They should fear power."
+		effect_tooltip = {
+		#current_genocide
+			PREV = {
+			add_resistance = -10
+			add_compliance = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = genocide.3
+	title = genocide.3.t
+	desc = genocide.3.d
+	picture = GFX_report_event_long_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "A successful Operation"
+		hidden_effect = {
+		every_controlled_state = {
+			limit = {
+				has_state_flag = genocide_alert
+			}
+			clr_state_flag = genocide_alert
+		}
+		}
+	}
+}
+
+
+country_event = {
+	id = genocide.4
+	title = genocide.4.t
+	desc = genocide.4.d
+	picture = GFX_report_event_burma_road
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "A successful Operation"
+		hidden_effect = {
+		every_controlled_state = {
+			limit = {
+				has_state_flag = genocide_alert
+			}
+			clr_state_flag = genocide_alert
+		}
+		}
+	}
+}
+
+
+country_event = {
+	id = genocide.5
+	title = genocide.5.t
+	desc = genocide.5.d
+	picture = GFX_report_event_chinese_soldiers_city_ruin
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "A successful Operation"
+		hidden_effect = {
+		every_controlled_state = {
+			limit = {
+				has_state_flag = genocide_alert
+			}
+			clr_state_flag = genocide_alert
+		}
+		}
+	}
+}
+
+
+news_event = {
+	id = genocide.6
+	title = genocide.6.t
+	desc = genocide.6.d
+	picture = GFX_news_event_033
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "Those monsters!"
+		add_stability = 0.05
+		add_war_support = 0.1
+		trigger = {
+			NOT = {
+				has_country_flag = genocide_alert
+			}
+		}
+	}
+	option = {
+		name = "Im sure its not as bad as it seems."
+		add_stability = -0.1
+		add_war_support -0.05
+		clr_country_flag = genocide_alert
+		trigger = {
+		has_country_flag = genocide_alert
+		}
+	}
+}

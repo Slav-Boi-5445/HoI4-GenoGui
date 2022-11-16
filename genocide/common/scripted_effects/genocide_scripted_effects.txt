@@ -1,0 +1,111 @@
+
+genocide_completion_effect = {
+	if = {
+		limit = {
+			check_variable = {
+			var = removal_status_state_level
+			value = 2
+			compare = equals
+			}
+		}
+		set_temp_variable = { temp_state_population = state_population_k } #population in thousands, needs to multiply by manyy
+		multiply_temp_variable = { temp_state_population = -25 } #2.5%
+		add_manpower = temp_state_population
+	}
+	if = {
+		limit = {
+			check_variable = {
+			var = removal_status_state_level
+			value = 3
+			compare = equals
+			}
+		}
+		set_temp_variable = { temp_state_population = state_population_k }
+		multiply_temp_variable = { temp_state_population = -15 } #1.5%
+		add_manpower = temp_state_population
+	}
+	clear_variable = removal_level_set
+	clr_state_flag = current_genocide
+	set_variable = {
+		var = removal_status_bar_level
+		value = 1
+	}
+	controller = { clr_country_flag = removal_in_progress }
+}
+
+genocide_event_effect = {
+		random_list = {
+			20 = {
+				country_event = {
+				id = genocide.1 ##resent
+				days = 5
+				random_days = 5
+				}
+				every_controlled_state = {
+					limit = {
+						has_state_flag = current_genocide
+						not = { is_core_of = controller }
+					}
+					add_resistance = 20
+					add_compliance = -10
+				}
+			}
+			40 = {
+				country_event = {
+				id = genocide.2 ##fear
+				days = 5
+				random_days = 5
+				}
+				every_controlled_state = {
+					limit = {
+						has_state_flag = current_genocide
+						not = { is_core_of = controller }
+					}
+					add_resistance = -10
+					add_compliance = 5
+				}
+			}
+			40 = { }
+		}
+}
+
+
+genocide_newsevent_effect_high = {
+	random_list = {
+		60 = { #60
+		set_country_flag = genocide_alert
+			news_event = {
+			id = genocide.6 ##global report
+			random_days = 3
+			}
+		}
+		40 = { #40
+		}
+	}
+}
+genocide_newsevent_effect_medium = {
+	random_list = {
+		40 = {
+			set_country_flag = genocide_alert
+			news_event = {
+			id = genocide.6 ##global report
+			random_days = 3
+			}
+		}
+		60 = {
+		}
+	}
+}
+genocide_newsevent_effect_low = {
+	random_list = {
+		20 = {
+			set_country_flag = genocide_alert
+			news_event = {
+			id = genocide.6 ##global report
+			random_days = 3
+			}
+		}
+		80 = {
+		}
+	}
+}

@@ -1,0 +1,6732 @@
+
+defined_text = {
+	name = GetRemovalProgressionLevel123
+	text = {
+		trigger = {
+			check_variable = { removal_status_state_level = 1 }
+		}
+		localization_key = current_state_removal_status_level_1
+	}
+	text = {
+		trigger = {
+			check_variable = { removal_status_state_level = 2 }
+		}
+		localization_key = current_state_removal_status_level_2
+	}
+	text = {
+		trigger = {
+			check_variable = { removal_status_state_level = 3 }
+		}
+		localization_key = current_state_removal_status_level_3
+	}
+	text = {
+		localization_key = "Error"
+	}
+}
+defined_text = {
+	name = GetExecuteGenocideButtonTooltip
+	text = {
+		trigger = {
+			check_variable = { var = removal_level_set value = 0 compare = greater_than }
+		}
+		localization_key = execute_genocide_button_level_selected_tooltip
+	}
+	text = {
+		trigger = {
+		}
+		localization_key = execute_genocide_button_no_level_selected_tooltip
+	}
+}
+defined_text = {
+	name = GetHasFiftyInfantryEquipmentGeno
+	text = {
+		trigger = {
+				ROOT = {
+					OR = {
+						has_equipment = { infantry_equipment_0 > 50 }
+						has_equipment = { infantry_equipment_1 > 50 }
+						has_equipment = { infantry_equipment_2 > 50 }
+						has_equipment = { infantry_equipment_3 > 50 }
+					}
+				}
+		}
+		localization_key = GetHasFiftyInfantryEquipmentGenoHas
+	}
+	text = {
+		trigger = {
+			NOT = {
+				ROOT = {
+					OR = {
+						has_equipment = { infantry_equipment_0 > 50 }
+						has_equipment = { infantry_equipment_1 > 50 }
+						has_equipment = { infantry_equipment_2 > 50 }
+						has_equipment = { infantry_equipment_3 > 50 }
+					}
+				}
+			}
+		}
+		localization_key = GetHasFiftyInfantryEquipmentGenoHasNot
+	}
+}
+defined_text = {
+	name = GetHasOneHundredInfantryEquipmentGeno
+	text = {
+		trigger = {
+				ROOT = {
+					OR = {
+						has_equipment = { infantry_equipment_0 > 100 }
+						has_equipment = { infantry_equipment_1 > 100 }
+						has_equipment = { infantry_equipment_2 > 100 }
+						has_equipment = { infantry_equipment_3 > 100 }
+					}
+				}
+		}
+		localization_key = GetHasOneHundredInfantryEquipmentGenoHas
+	}
+	text = {
+		trigger = {
+			NOT = {
+				ROOT = {
+					OR = {
+						has_equipment = { infantry_equipment_0 > 100 }
+						has_equipment = { infantry_equipment_1 > 100 }
+						has_equipment = { infantry_equipment_2 > 100 }
+						has_equipment = { infantry_equipment_3 > 100 }
+					}
+				}
+			}
+		}
+		localization_key = GetHasOneHundredInfantryEquipmentGenoHasNot
+	}
+}
+defined_text = {
+	name = GetHasTwentySupportEquipmentGeno
+	text = {
+		trigger = {
+			ROOT = {
+				has_equipment = { support_equipment_1 > 20 }
+			}
+		}
+		localization_key = GetHasTwentySupportEquipmentGenoHas
+	}
+	text = {
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_equipment = { support_equipment_1 > 20 }
+				}
+			}
+		}
+		localization_key = GetHasTwentySupportEquipmentGenoHasNot
+	}
+}
+defined_text = {
+	name = GetHasTenPoliticalPowerGeno
+	text = {
+		trigger = {
+			ROOT = {
+				has_political_power > 10
+			}
+		}
+		localization_key = GetHasTenPoliticalPowerGenoHas
+	}
+	text = {
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_political_power > 10
+				}
+			}
+		}
+		localization_key = GetHasTenPoliticalPowerGenoHasNot
+	}
+}
+defined_text = {
+	name = GetHasThirtyPoliticalPowerGeno
+	text = {
+		trigger = {
+			ROOT = {
+				has_political_power > 30
+			}
+		}
+		localization_key = GetHasThirtyPoliticalPowerGenoHas
+	}
+	text = {
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_political_power > 30
+				}
+			}
+		}
+		localization_key = GetHasThirtyPoliticalPowerGenoHasNot
+	}
+}
+defined_text = {
+	name = GetHasFortyPoliticalPowerGeno
+	text = {
+		trigger = {
+			ROOT = {
+				has_political_power > 40
+			}
+		}
+		localization_key = GetHasFortyPoliticalPowerGenoHas
+	}
+	text = {
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_political_power > 40
+				}
+			}
+		}
+		localization_key = GetHasFortyPoliticalPowerGenoHasNot
+	}
+}
+
+defined_text = {
+	name = GetGenocideCountryNewsName
+	text = {
+		trigger = {
+			has_country_flag = genocide_alert
+		}
+		localization_key = GetGenocideCountryNewsNameTooltip
+	}
+}
+
+defined_text = {
+	name = GetTempStatePopulationNegative
+	text = {
+		trigger = {
+		set_temp_variable = { temp_state_population = state_population_k } #population in thousands, needs to multiply by manyy
+		multiply_temp_variable = { temp_state_population = -25 } #2.5%
+		check_variable = {
+		var = removal_status_state_level
+		value = 1
+		compare = equals
+		}
+		}
+		localization_key = "[?t.temp_state_population]"
+	}
+	text = {
+		trigger = {
+		set_temp_variable = { temp_state_population = state_population_k } #population in thousands, needs to multiply by manyy
+		multiply_temp_variable = { temp_state_population = -15 } #1.5%
+		check_variable = {
+		var = removal_status_state_level
+		value = 2
+		compare = equals
+		}
+		}
+		localization_key = "[?t.temp_state_population]"
+	}
+	text = {
+		trigger = {
+		check_variable = {
+		var = removal_status_state_level
+		value = 3
+		compare = equals
+		}
+		}
+		localization_key = "none"
+	}
+}
+defined_text = {
+	name = GetHelpInfoGeno
+	text = {
+		trigger = {
+		ROOT = { has_country_flag = help_general_geno }
+		}
+		localization_key = help_general_geno_text
+	}
+	text = {
+		trigger = {
+		ROOT = { has_country_flag = help_removal_geno }
+		}
+		localization_key = help_removal_geno_text
+	}
+	text = {
+		trigger = {
+		ROOT = { has_country_flag = help_cancel_geno }
+		}
+		localization_key = help_cancel_geno_text
+	}
+	text = {
+		trigger = {
+		ROOT = { has_country_flag = help_close_geno }
+		}
+		localization_key = help_close_geno_text
+	}
+}
+
+defined_text = {
+	name = GetTempStatePopulationPositiveRoundedInText
+	text = {
+		trigger = {
+		every_controlled_state = {
+			limit = {
+				has_state_flag = genocide_alert
+				check_variable = {
+					var = removal_status_state_level
+					value = 1
+					compare = equals
+				}
+			set_temp_variable = { temp_state_population = state_population_k } #population in thousands, needs to multiply by manyy
+			multiply_temp_variable = { temp_state_population = 25 } #2.5%
+			
+			##rounded estimation
+			divide_temp_variable = { temp_state_population = 100000 }
+			round_variable = temp_state_population
+			multiply_temp_variable = { temp_state_population = 100000 }
+			}
+		}
+		}
+		localization_key = "[?t.temp_state_population]"
+	}
+	text = {
+		trigger = {
+		every_controlled_state = {
+			limit = {
+				has_state_flag = genocide_alert
+				check_variable = {
+					var = removal_status_state_level
+					value = 2
+					compare = equals
+				}
+			set_temp_variable = { temp_state_population = state_population_k } #population in thousands, needs to multiply by manyy
+			multiply_temp_variable = { temp_state_population = 15 } #1.5%
+		
+			##rounded estimation
+			divide_temp_variable = { temp_state_population = 100000 }
+			round_variable = temp_state_population
+			multiply_temp_variable = { temp_state_population = 100000 }
+			}
+		}
+		}
+		localization_key = "[?t.temp_state_population]"
+	}
+}
+defined_text = {
+	name = GetTempStatePopulationPositiveRounded
+	text = {
+		trigger = {
+		check_variable = {
+		var = removal_status_state_level
+		value = 1
+		compare = equals
+		}
+		set_temp_variable = { temp_state_population = state_population_k } #population in thousands, needs to multiply by manyy
+		multiply_temp_variable = { temp_state_population = 25 } #2.5%
+		
+		##rounded estimation
+		divide_temp_variable = { temp_state_population = 100000 }
+		round_variable = { temp_state_population }
+		multiply_temp_variable = { temp_state_population = 100000 }
+		}
+		
+		localization_key = "[?t.temp_state_population]"
+	}
+	text = {
+		trigger = {
+		check_variable = {
+		var = removal_status_state_level
+		value = 2
+		compare = equals
+		}
+		set_temp_variable = { temp_state_population = state_population_k } #population in thousands, needs to multiply by manyy
+		multiply_temp_variable = { temp_state_population = 15 } #1.5%
+		
+		##rounded estimation
+		divide_temp_variable = { temp_state_population = 100000 }
+		round_variable = { temp_state_population }
+		multiply_temp_variable = { temp_state_population = 100000 }
+		}
+		
+		localization_key = "[?t.temp_state_population]"
+	}
+	text = {
+		trigger = {
+		check_variable = {
+		var = removal_status_state_level
+		value = 3
+		compare = equals
+		}
+		}
+		localization_key = "0"
+	}
+}
+defined_text = {
+	name = GetTempStatePopulationPositive
+	text = {
+		trigger = {
+		set_temp_variable = { temp_state_population = state_population_k } #population in thousands, needs to multiply by manyy
+		multiply_temp_variable = { temp_state_population = 25 } #2.5%
+		check_variable = {
+		var = removal_status_state_level
+		value = 1
+		compare = equals
+		}
+		}
+		localization_key = "[?t.temp_state_population]"
+	}
+	text = {
+		trigger = {
+		set_temp_variable = { temp_state_population = state_population_k } #population in thousands, needs to multiply by manyy
+		multiply_temp_variable = { temp_state_population = 15 } #1.5%
+		check_variable = {
+		var = removal_status_state_level
+		value = 2
+		compare = equals
+		}
+		}
+		localization_key = "[?t.temp_state_population]"
+	}
+	text = {
+		trigger = {
+		check_variable = {
+		var = removal_status_state_level
+		value = 3
+		compare = equals
+		}
+		}
+		localization_key = "0"
+	}
+}
+
+defined_text = {
+	name = GetCurrentStateNameLoc
+	text = {
+		trigger = {
+			ROOT = {
+			has_country_flag = geno_menu_open
+			all_controlled_state = { NOT = { has_state_flag = current_geno_menu_open } }
+			}
+		}
+		localization_key = "Enemy Controlled Territory"
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 1 }
+			1 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_1_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 2 }
+			2 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_2_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 3 }
+			3 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_3_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 4 }
+			4 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_4_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 5 }
+			5 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_5_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 6 }
+			6 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_6_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 7 }
+			7 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_7_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 8 }
+			8 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_8_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 9 }
+			9 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_9_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 10 }
+			10 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_10_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 11 }
+			11 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_11_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 12 }
+			12 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_12_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 13 }
+			13 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_13_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 14 }
+			14 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_14_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 15 }
+			15 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_15_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 16 }
+			16 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_16_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 17 }
+			17 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_17_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 18 }
+			18 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_18_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 19 }
+			19 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_19_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 20 }
+			20 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_20_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 21 }
+			21 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_21_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 22 }
+			22 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_22_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 23 }
+			23 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_23_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 24 }
+			24 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_24_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 25 }
+			25 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_25_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 26 }
+			26 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_26_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 27 }
+			27 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_27_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 28 }
+			28 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_28_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 29 }
+			29 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_29_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 30 }
+			30 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_30_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 31 }
+			31 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_31_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 32 }
+			32 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_32_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 33 }
+			33 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_33_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 34 }
+			34 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_34_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 35 }
+			35 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_35_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 36 }
+			36 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_36_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 37 }
+			37 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_37_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 38 }
+			38 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_38_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 39 }
+			39 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_39_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 40 }
+			40 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_40_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 41 }
+			41 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_41_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 42 }
+			42 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_42_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 43 }
+			43 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_43_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 44 }
+			44 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_44_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 45 }
+			45 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_45_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 46 }
+			46 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_46_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 47 }
+			47 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_47_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 48 }
+			48 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_48_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 49 }
+			49 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_49_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 50 }
+			50 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_50_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 51 }
+			51 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_51_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 52 }
+			52 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_52_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 53 }
+			53 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_53_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 54 }
+			54 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_54_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 55 }
+			55 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_55_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 56 }
+			56 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_56_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 57 }
+			57 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_57_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 58 }
+			58 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_58_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 59 }
+			59 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_59_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 60 }
+			60 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_60_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 61 }
+			61 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_61_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 62 }
+			62 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_62_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 63 }
+			63 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_63_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 64 }
+			64 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_64_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 65}
+			65 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_65_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 66}
+			66 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_66_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 67}
+			67 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_67_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 68}
+			68 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_68_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 69}
+			69 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_69_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 70}
+			70 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_70_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 71}
+			71 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_71_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 72}
+			72 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_72_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 73}
+			73 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_73_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 74}
+			74 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_74_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 75}
+			75 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_75_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 76}
+			76 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_76_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 77}
+			77 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_77_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 78}
+			78 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_78_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 79}
+			79 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_79_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 80}
+			80 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_80_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 81}
+			81 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_81_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 82}
+			82 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_82_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 83}
+			83 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_83_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 84}
+			84 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_84_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 85}
+			85 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_85_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 86}
+			86 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_86_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 87}
+			87 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_87_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 88}
+			88 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_88_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 89}
+			89 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_89_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 90}
+			90 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_90_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 91}
+			91 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_91_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 92}
+			92 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_92_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 93}
+			93 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_93_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 94}
+			94 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_94_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 95}
+			95 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_95_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 96}
+			96 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_96_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 97}
+			97 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_97_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 98}
+			98 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_98_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 99}
+			99 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_99_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 100}
+			100 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_100_scripted_loc
+	}
+	
+	text = {
+		trigger = {
+			ROOT = { controls_state = 101}
+			101 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_101_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 102}
+			102 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_102_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 103}
+			103 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_103_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 104}
+			104 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_104_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 105}
+			105 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_105_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 106}
+			106 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_106_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 107}
+			107 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_107_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 108}
+			108 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_108_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 109}
+			109 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_109_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 110}
+			110 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_110_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 111}
+			111 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_111_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 112}
+			112 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_112_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 113}
+			113 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_113_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 114}
+			114 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_114_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 115}
+			115 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_115_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 116}
+			116 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_116_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 117}
+			117 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_117_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 118}
+			118 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_118_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 119}
+			119 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_119_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 120}
+			120 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_120_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 121}
+			121 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_121_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 122}
+			122 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_122_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 123}
+			123 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_123_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 124}
+			124 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_124_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 125}
+			125 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_125_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 126}
+			126 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_126_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 127}
+			127 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_127_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 128}
+			128 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_128_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 129}
+			129 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_129_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 130}
+			130 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_130_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 131}
+			131 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_131_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 132}
+			132 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_132_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 133}
+			133 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_133_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 134}
+			134 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_134_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 135}
+			135 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_135_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 136}
+			136 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_136_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 137}
+			137 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_137_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 138}
+			138 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_138_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 139}
+			139 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_139_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 140}
+			140 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_140_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 141}
+			141 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_141_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 142}
+			142 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_142_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 143}
+			143 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_143_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 144}
+			144 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_144_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 145}
+			145 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_145_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 146}
+			146 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_146_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 147}
+			147 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_147_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 148}
+			148 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_148_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 149}
+			149 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_149_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 150}
+			150 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_150_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 151}
+			151 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_151_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 152}
+			152 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_152_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 153}
+			153 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_153_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 154}
+			154 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_154_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 155}
+			155 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_155_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 156}
+			156 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_156_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 157}
+			157 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_157_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 158}
+			158 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_158_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 159}
+			159 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_159_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 160}
+			160 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_160_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 161}
+			161 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_161_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 162}
+			162 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_162_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 163}
+			163 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_163_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 164}
+			164 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_164_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 165}
+			165 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_165_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 166}
+			166 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_166_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 167}
+			167 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_167_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 168}
+			168 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_168_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 169}
+			169 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_169_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 170}
+			170 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_170_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 171}
+			171 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_171_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 172}
+			172 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_172_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 173}
+			173 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_173_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 174}
+			174 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_174_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 175}
+			175 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_175_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 176}
+			176 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_176_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 177}
+			177 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_177_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 178}
+			178 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_178_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 179}
+			179 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_179_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 180}
+			180 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_180_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 181}
+			181 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_181_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 182}
+			182 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_182_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 183}
+			183 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_183_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 184}
+			184 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_184_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 185}
+			185 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_185_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 186}
+			186 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_186_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 187}
+			187 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_187_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 188}
+			188 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_188_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 189}
+			189 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_189_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 190}
+			190 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_190_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 191}
+			191 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_191_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 192}
+			192 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_192_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 193}
+			193 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_193_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 194}
+			194 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_194_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 195}
+			195 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_195_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 196}
+			196 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_196_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 197}
+			197 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_197_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 198}
+			198 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_198_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 199}
+			199 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_199_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 200}
+			200 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_200_scripted_loc
+	}
+	
+	
+	text = {
+		trigger = {
+			ROOT = { controls_state = 201}
+			201 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_201_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 202}
+			202 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_202_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 203}
+			203 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_203_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 204}
+			204 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_204_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 205}
+			205 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_205_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 206}
+			206 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_206_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 207}
+			207 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_207_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 208}
+			208 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_208_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 209}
+			209 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_209_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 210}
+			210 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_210_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 211}
+			211 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_211_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 212}
+			212 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_212_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 213}
+			213 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_213_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 214}
+			214 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_214_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 215}
+			215 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_215_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 216}
+			216 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_216_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 217}
+			217 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_217_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 218}
+			218 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_218_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 219}
+			219 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_219_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 220}
+			220 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_220_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 221}
+			221 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_221_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 222}
+			222 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_222_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 223}
+			223 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_223_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 224}
+			224 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_224_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 225}
+			225 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_225_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 226}
+			226 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_226_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 227}
+			227 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_227_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 228}
+			228 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_228_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 229}
+			229 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_229_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 230}
+			230 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_230_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 231}
+			231 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_231_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 232}
+			232 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_232_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 233}
+			233 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_233_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 234}
+			234 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_234_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 235}
+			235 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_235_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 236}
+			236 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_236_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 237}
+			237 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_237_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 238}
+			238 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_238_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 239}
+			239 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_239_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 240}
+			240 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_240_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 241}
+			241 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_241_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 242}
+			242 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_242_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 243}
+			243 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_243_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 244}
+			244 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_244_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 245}
+			245 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_245_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 246}
+			246 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_246_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 247}
+			247 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_247_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 248}
+			248 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_248_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 249}
+			249 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_249_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 250}
+			250 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_250_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 251}
+			251 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_251_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 252}
+			252 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_252_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 253}
+			253 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_253_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 254}
+			254 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_254_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 255}
+			255 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_255_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 256}
+			256 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_256_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 257}
+			257 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_257_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 258}
+			258 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_258_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 259}
+			259 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_259_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 260}
+			260 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_260_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 261}
+			261 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_261_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 262}
+			262 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_262_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 263}
+			263 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_263_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 264}
+			264 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_264_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 265}
+			265 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_265_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 266}
+			266 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_266_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 267}
+			267 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_267_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 268}
+			268 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_268_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 269}
+			269 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_269_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 270}
+			270 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_270_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 271}
+			271 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_271_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 272}
+			272 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_272_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 273}
+			273 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_273_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 274}
+			274 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_274_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 275}
+			275 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_275_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 276}
+			276 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_276_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 277}
+			277 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_277_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 278}
+			278 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_278_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 279}
+			279 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_279_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 280}
+			280 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_280_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 281}
+			281 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_281_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 282}
+			282 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_282_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 283}
+			283 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_283_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 284}
+			284 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_284_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 285}
+			285 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_285_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 286}
+			286 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_286_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 287}
+			287 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_287_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 288}
+			288 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_288_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 289}
+			289 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_289_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 290}
+			290 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_290_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 291}
+			291 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_291_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 292}
+			292 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_292_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 293}
+			293 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_293_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 294}
+			294 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_294_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 295}
+			295 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_295_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 296}
+			296 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_296_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 297}
+			297 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_297_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 298}
+			298 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_298_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 299}
+			299 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_299_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 300}
+			300 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_300_scripted_loc
+	}
+	
+	
+	text = {
+		trigger = {
+			ROOT = { controls_state = 301}
+			301 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_301_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 302}
+			302 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_302_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 303}
+			303 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_303_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 304}
+			304 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_304_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 305}
+			305 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_305_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 306}
+			306 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_306_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 307}
+			307 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_307_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 308}
+			308 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_308_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 309}
+			309 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_309_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 310}
+			310 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_310_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 311}
+			311 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_311_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 312}
+			312 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_312_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 313}
+			313 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_313_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 314}
+			314 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_314_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 315}
+			315 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_315_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 316}
+			316 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_316_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 317}
+			317 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_317_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 318}
+			318 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_318_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 319}
+			319 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_319_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 320}
+			320 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_320_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 321}
+			321 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_321_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 322}
+			322 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_322_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 323}
+			323 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_323_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 324}
+			324 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_324_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 325}
+			325 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_325_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 326}
+			326 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_326_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 327}
+			327 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_327_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 328}
+			328 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_328_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 329}
+			329 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_329_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 330}
+			330 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_330_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 331}
+			331 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_331_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 332}
+			332 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_332_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 333}
+			333 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_333_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 334}
+			334 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_334_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 335}
+			335 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_335_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 336}
+			336 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_336_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 337}
+			337 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_337_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 338}
+			338 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_338_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 339}
+			339 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_339_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 340}
+			340 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_340_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 341}
+			341 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_341_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 342}
+			342 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_342_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 343}
+			343 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_343_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 344}
+			344 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_344_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 345}
+			345 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_345_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 346}
+			346 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_346_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 347}
+			347 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_347_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 348}
+			348 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_348_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 349}
+			349 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_349_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 350}
+			350 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_350_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 351}
+			351 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_351_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 352}
+			352 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_352_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 353}
+			353 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_353_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 354}
+			354 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_354_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 355}
+			355 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_355_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 356}
+			356 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_356_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 357}
+			357 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_357_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 358}
+			358 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_358_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 359}
+			359 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_359_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 360}
+			360 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_360_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 361}
+			361 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_361_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 362}
+			362 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_362_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 363}
+			363 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_363_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 364}
+			364 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_364_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 365}
+			365 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_365_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 366}
+			366 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_366_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 367}
+			367 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_367_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 368}
+			368 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_368_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 369}
+			369 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_369_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 370}
+			370 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_370_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 371}
+			371 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_371_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 372}
+			372 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_372_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 373}
+			373 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_373_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 374}
+			374 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_374_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 375}
+			375 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_375_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 376}
+			376 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_376_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 377}
+			377 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_377_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 378}
+			378 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_378_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 379}
+			379 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_379_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 380}
+			380 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_380_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 381}
+			381 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_381_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 382}
+			382 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_382_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 383}
+			383 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_383_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 384}
+			384 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_384_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 385}
+			385 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_385_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 386}
+			386 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_386_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 387}
+			387 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_387_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 388}
+			388 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_388_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 389}
+			389 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_389_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 390}
+			390 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_390_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 391}
+			391 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_391_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 392}
+			392 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_392_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 393}
+			393 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_393_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 394}
+			394 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_394_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 395}
+			395 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_395_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 396}
+			396 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_396_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 397}
+			397 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_397_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 398}
+			398 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_398_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 399}
+			399 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_399_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 400}
+			400 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_400_scripted_loc
+	}
+	
+	
+	text = {
+		trigger = {
+			ROOT = { controls_state = 401}
+			401 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_401_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 402}
+			402 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_402_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 403}
+			403 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_403_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 404}
+			404 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_404_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 405}
+			405 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_405_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 406}
+			406 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_406_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 407}
+			407 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_407_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 408}
+			408 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_408_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 409}
+			409 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_409_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 410}
+			410 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_410_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 411}
+			411 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_411_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 412}
+			412 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_412_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 413}
+			413 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_413_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 414}
+			414 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_414_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 415}
+			415 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_415_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 416}
+			416 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_416_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 417}
+			417 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_417_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 418}
+			418 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_418_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 419}
+			419 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_419_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 420}
+			420 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_420_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 421}
+			421 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_421_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 422}
+			422 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_422_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 423}
+			423 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_423_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 424}
+			424 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_424_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 425}
+			425 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_425_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 426}
+			426 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_426_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 427}
+			427 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_427_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 428}
+			428 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_428_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 429}
+			429 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_429_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 430}
+			430 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_430_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 431}
+			431 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_431_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 432}
+			432 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_432_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 433}
+			433 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_433_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 434}
+			434 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_434_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 435}
+			435 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_435_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 436}
+			436 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_436_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 437}
+			437 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_437_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 438}
+			438 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_438_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 439}
+			439 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_439_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 440}
+			440 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_440_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 441}
+			441 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_441_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 442}
+			442 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_442_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 443}
+			443 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_443_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 444}
+			444 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_444_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 445}
+			445 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_445_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 446}
+			446 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_446_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 447}
+			447 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_447_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 448}
+			448 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_448_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 449}
+			449 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_449_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 450}
+			450 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_450_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 451}
+			451 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_451_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 452}
+			452 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_452_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 453}
+			453 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_453_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 454}
+			454 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_454_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 455}
+			455 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_455_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 456}
+			456 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_456_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 457}
+			457 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_457_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 458}
+			458 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_458_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 459}
+			459 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_459_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 460}
+			460 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_460_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 461}
+			461 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_461_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 462}
+			462 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_462_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 463}
+			463 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_463_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 464}
+			464 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_464_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 465}
+			465 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_465_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 466}
+			466 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_466_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 467}
+			467 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_467_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 468}
+			468 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_468_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 469}
+			469 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_469_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 470}
+			470 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_470_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 471}
+			471 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_471_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 472}
+			472 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_472_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 473}
+			473 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_473_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 474}
+			474 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_474_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 475}
+			475 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_475_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 476}
+			476 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_476_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 477}
+			477 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_477_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 478}
+			478 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_478_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 479}
+			479 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_479_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 480}
+			480 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_480_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 481}
+			481 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_481_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 482}
+			482 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_482_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 483}
+			483 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_483_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 484}
+			484 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_484_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 485}
+			485 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_485_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 486}
+			486 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_486_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 487}
+			487 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_487_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 488}
+			488 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_488_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 489}
+			489 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_489_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 490}
+			490 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_490_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 491}
+			491 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_491_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 492}
+			492 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_492_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 493}
+			493 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_493_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 494}
+			494 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_494_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 495}
+			495 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_495_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 496}
+			496 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_496_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 497}
+			497 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_497_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 498}
+			498 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_498_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 499}
+			499 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_499_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 500}
+			500 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_500_scripted_loc
+	}
+	
+	
+	text = {
+		trigger = {
+			ROOT = { controls_state = 501}
+			501 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_501_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 502}
+			502 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_502_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 503}
+			503 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_503_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 504}
+			504 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_504_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 505}
+			505 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_505_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 506}
+			506 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_506_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 507}
+			507 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_507_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 508}
+			508 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_508_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 509}
+			509 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_509_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 510}
+			510 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_510_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 511}
+			511 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_511_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 512}
+			512 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_512_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 513}
+			513 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_513_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 514}
+			514 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_514_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 515}
+			515 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_515_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 516}
+			516 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_516_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 517}
+			517 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_517_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 518}
+			518 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_518_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 519}
+			519 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_519_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 520}
+			520 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_520_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 521}
+			521 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_521_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 522}
+			522 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_522_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 523}
+			523 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_523_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 524}
+			524 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_524_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 525}
+			525 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_525_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 526}
+			526 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_526_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 527}
+			527 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_527_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 528}
+			528 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_528_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 529}
+			529 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_529_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 530}
+			530 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_530_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 531}
+			531 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_531_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 532}
+			532 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_532_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 533}
+			533 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_533_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 534}
+			534 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_534_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 535}
+			535 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_535_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 536}
+			536 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_536_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 537}
+			537 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_537_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 538}
+			538 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_538_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 539}
+			539 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_539_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 540}
+			540 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_540_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 541}
+			541 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_541_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 542}
+			542 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_542_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 543}
+			543 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_543_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 544}
+			544 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_544_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 545}
+			545 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_545_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 546}
+			546 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_546_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 547}
+			547 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_547_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 548}
+			548 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_548_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 549}
+			549 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_549_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 550}
+			550 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_550_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 551}
+			551 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_551_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 552}
+			552 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_552_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 553}
+			553 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_553_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 554}
+			554 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_554_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 555}
+			555 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_555_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 556}
+			556 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_556_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 557}
+			557 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_557_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 558}
+			558 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_558_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 559}
+			559 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_559_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 560}
+			560 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_560_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 561}
+			561 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_561_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 562}
+			562 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_562_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 563}
+			563 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_563_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 564}
+			564 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_564_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 565}
+			565 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_565_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 566}
+			566 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_566_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 567}
+			567 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_567_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 568}
+			568 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_568_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 569}
+			569 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_569_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 570}
+			570 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_570_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 571}
+			571 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_571_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 572}
+			572 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_572_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 573}
+			573 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_573_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 574}
+			574 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_574_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 575}
+			575 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_575_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 576}
+			576 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_576_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 577}
+			577 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_577_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 578}
+			578 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_578_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 579}
+			579 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_579_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 580}
+			580 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_580_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 581}
+			581 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_581_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 582}
+			582 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_582_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 583}
+			583 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_583_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 584}
+			584 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_584_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 585}
+			585 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_585_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 586}
+			586 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_586_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 587}
+			587 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_587_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 588}
+			588 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_588_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 589}
+			589 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_589_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 590}
+			590 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_590_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 591}
+			591 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_591_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 592}
+			592 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_592_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 593}
+			593 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_593_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 594}
+			594 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_594_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 595}
+			595 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_595_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 596}
+			596 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_596_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 597}
+			597 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_597_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 598}
+			598 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_598_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 599}
+			599 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_599_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 600}
+			600 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_600_scripted_loc
+	}
+	
+	
+	text = {
+		trigger = {
+			ROOT = { controls_state = 601}
+			601 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_601_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 602}
+			602 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_602_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 603}
+			603 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_603_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 604}
+			604 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_604_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 605}
+			605 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_605_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 606}
+			606 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_606_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 607}
+			607 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_607_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 608}
+			608 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_608_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 609}
+			609 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_609_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 610}
+			610 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_610_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 611}
+			611 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_611_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 612}
+			612 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_612_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 613}
+			613 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_613_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 614}
+			614 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_614_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 615}
+			615 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_615_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 616}
+			616 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_616_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 617}
+			617 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_617_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 618}
+			618 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_618_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 619}
+			619 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_619_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 620}
+			620 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_620_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 621}
+			621 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_621_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 622}
+			622 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_622_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 623}
+			623 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_623_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 624}
+			624 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_624_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 625}
+			625 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_625_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 626}
+			626 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_626_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 627}
+			627 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_627_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 628}
+			628 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_628_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 629}
+			629 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_629_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 630}
+			630 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_630_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 631}
+			631 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_631_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 632}
+			632 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_632_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 633}
+			633 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_633_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 634}
+			634 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_634_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 635}
+			635 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_635_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 636}
+			636 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_636_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 637}
+			637 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_637_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 638}
+			638 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_638_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 639}
+			639 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_639_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 640}
+			640 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_640_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 641}
+			641 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_641_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 642}
+			642 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_642_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 643}
+			643 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_643_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 644}
+			644 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_644_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 645}
+			645 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_645_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 646}
+			646 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_646_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 647}
+			647 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_647_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 648}
+			648 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_648_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 649}
+			649 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_649_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 650}
+			650 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_650_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 651}
+			651 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_651_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 652}
+			652 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_652_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 653}
+			653 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_653_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 654}
+			654 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_654_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 655}
+			655 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_655_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 656}
+			656 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_656_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 657}
+			657 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_657_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 658}
+			658 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_658_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 659}
+			659 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_659_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 660}
+			660 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_660_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 661}
+			661 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_661_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 662}
+			662 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_662_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 663}
+			663 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_663_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 664}
+			664 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_664_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 665}
+			665 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_665_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 666}
+			666 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_666_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 667}
+			667 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_667_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 668}
+			668 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_668_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 669}
+			669 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_669_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 670}
+			670 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_670_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 671}
+			671 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_671_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 672}
+			672 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_672_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 673}
+			673 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_673_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 674}
+			674 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_674_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 675}
+			675 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_675_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 676}
+			676 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_676_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 677}
+			677 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_677_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 678}
+			678 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_678_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 679}
+			679 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_679_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 680}
+			680 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_680_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 681}
+			681 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_681_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 682}
+			682 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_682_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 683}
+			683 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_683_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 684}
+			684 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_684_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 685}
+			685 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_685_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 686}
+			686 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_686_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 687}
+			687 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_687_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 688}
+			688 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_688_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 689}
+			689 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_689_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 690}
+			690 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_690_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 691}
+			691 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_691_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 692}
+			692 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_692_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 693}
+			693 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_693_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 694}
+			694 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_694_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 695}
+			695 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_695_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 696}
+			696 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_696_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 697}
+			697 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_697_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 698}
+			698 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_698_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 699}
+			699 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_699_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 700}
+			700 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_700_scripted_loc
+	}
+	
+	text = {
+		trigger = {
+			ROOT = { controls_state = 701}
+			701 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_701_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 702}
+			702 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_702_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 703}
+			703 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_703_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 704}
+			704 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_704_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 705}
+			705 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_705_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 706}
+			706 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_706_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 707}
+			707 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_707_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 708}
+			708 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_708_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 709}
+			709 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_709_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 710}
+			710 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_710_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 711}
+			711 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_711_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 712}
+			712 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_712_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 713}
+			713 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_713_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 714}
+			714 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_714_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 715}
+			715 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_715_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 716}
+			716 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_716_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 717}
+			717 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_717_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 718}
+			718 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_718_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 719}
+			719 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_719_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 720}
+			720 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_720_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 721}
+			721 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_721_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 722}
+			722 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_722_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 723}
+			723 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_723_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 724}
+			724 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_724_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 725}
+			725 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_725_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 726}
+			726 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_726_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 727}
+			727 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_727_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 728}
+			728 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_728_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 729}
+			729 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_729_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 730}
+			730 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_730_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 731}
+			731 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_731_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 732}
+			732 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_732_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 733}
+			733 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_733_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 734}
+			734 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_734_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 735}
+			735 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_735_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 736}
+			736 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_736_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 737}
+			737 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_737_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 738}
+			738 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_738_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 739}
+			739 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_739_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 740}
+			740 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_740_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 741}
+			741 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_741_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 742}
+			742 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_742_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 743}
+			743 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_743_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 744}
+			744 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_744_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 745}
+			745 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_745_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 746}
+			746 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_746_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 747}
+			747 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_747_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 748}
+			748 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_748_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 749}
+			749 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_749_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 750}
+			750 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_750_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 751}
+			751 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_751_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 752}
+			752 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_752_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 753}
+			753 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_753_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 754}
+			754 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_754_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 755}
+			755 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_755_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 756}
+			756 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_756_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 757}
+			757 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_757_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 758}
+			758 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_758_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 759}
+			759 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_759_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 760}
+			760 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_760_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 761}
+			761 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_761_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 762}
+			762 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_762_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 763}
+			763 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_763_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 764}
+			764 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_764_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 765}
+			765 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_765_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 766}
+			766 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_766_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 767}
+			767 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_767_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 768}
+			768 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_768_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 769}
+			769 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_769_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 770}
+			770 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_770_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 771}
+			771 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_771_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 772}
+			772 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_772_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 773}
+			773 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_773_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 774}
+			774 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_774_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 775}
+			775 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_775_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 776}
+			776 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_776_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 777}
+			777 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_777_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 778}
+			778 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_778_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 779}
+			779 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_779_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 780}
+			780 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_780_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 781}
+			781 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_781_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 782}
+			782 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_782_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 783}
+			783 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_783_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 784}
+			784 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_784_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 785}
+			785 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_785_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 786}
+			786 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_786_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 787}
+			787 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_787_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 788}
+			788 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_788_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 789}
+			789 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_789_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 790}
+			790 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_790_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 791}
+			791 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_791_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 792}
+			792 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_792_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 793}
+			793 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_793_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 794}
+			794 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_794_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 795}
+			795 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_795_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 796}
+			796 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_796_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 797}
+			797 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_797_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 798}
+			798 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_798_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 799}
+			799 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_799_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 800}
+			800 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_800_scripted_loc
+	}
+	
+	
+	text = {
+		trigger = {
+			ROOT = { controls_state = 801}
+			801 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_801_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 802}
+			802 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_802_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 803}
+			803 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_803_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 804}
+			804 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_804_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 805}
+			805 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_805_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 806}
+			806 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_806_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 807}
+			807 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_807_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 808}
+			808 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_808_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 809}
+			809 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_809_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 810}
+			810 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_810_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 811}
+			811 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_811_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 812}
+			812 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_812_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 813}
+			813 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_813_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 814}
+			814 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_814_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 815}
+			815 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_815_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 816}
+			816 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_816_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 817}
+			817 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_817_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 818}
+			818 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_818_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 819}
+			819 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_819_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 820}
+			820 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_820_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 821}
+			821 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_821_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 822}
+			822 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_822_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 823}
+			823 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_823_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 824}
+			824 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_824_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 825}
+			825 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_825_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 826}
+			826 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_826_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 827}
+			827 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_827_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 828}
+			828 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_828_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 829}
+			829 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_829_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 830}
+			830 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_830_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 831}
+			831 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_831_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 832}
+			832 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_832_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 833}
+			833 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_833_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 834}
+			834 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_834_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 835}
+			835 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_835_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 836}
+			836 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_836_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 837}
+			837 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_837_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 838}
+			838 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_838_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 839}
+			839 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_839_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 840}
+			840 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_840_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 841}
+			841 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_841_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 842}
+			842 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_842_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 843}
+			843 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_843_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 844}
+			844 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_844_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 845}
+			845 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_845_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 846}
+			846 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_846_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 847}
+			847 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_847_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 848}
+			848 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_848_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 849}
+			849 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_849_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 850}
+			850 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_850_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 851}
+			851 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_851_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 852}
+			852 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_852_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 853}
+			853 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_853_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 854}
+			854 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_854_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 855}
+			855 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_855_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 856}
+			856 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_856_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 857}
+			857 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_857_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 858}
+			858 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_858_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 859}
+			859 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_859_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 860}
+			860 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_860_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 861}
+			861 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_861_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 862}
+			862 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_862_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 863}
+			863 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_863_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 864}
+			864 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_864_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 865}
+			865 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_865_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 866}
+			866 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_866_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 867}
+			867 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_867_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 868}
+			868 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_868_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 869}
+			869 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_869_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 870}
+			870 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_870_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 871}
+			871 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_871_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 872}
+			872 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_872_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 873}
+			873 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_873_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 874}
+			874 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_874_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 875}
+			875 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_875_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 876}
+			876 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_876_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 877}
+			877 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_877_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 878}
+			878 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_878_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 879}
+			879 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_879_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 880}
+			880 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_880_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 881}
+			881 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_881_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 882}
+			882 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_882_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 883}
+			883 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_883_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 884}
+			884 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_884_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 885}
+			885 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_885_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 886}
+			886 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_886_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 887}
+			887 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_887_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 888}
+			888 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_888_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 889}
+			889 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_889_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 890}
+			890 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_890_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 891}
+			891 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_891_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 892}
+			892 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_892_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 893}
+			893 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_893_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 894}
+			894 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_894_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 895}
+			895 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_895_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 896}
+			896 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_896_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 897}
+			897 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_897_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 898}
+			898 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_898_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 899}
+			899 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_899_scripted_loc
+	}
+	text = {
+		trigger = {
+			ROOT = { controls_state = 900 }
+			900 = { has_state_flag = current_geno_menu_open }
+		}
+		localization_key = GetCurrentStateNameLoc_state_900_scripted_loc
+	}
+	
+	
+	text = {
+		trigger = {
+			ROOT = {
+			NOT = { has_country_flag = geno_menu_open }
+			any_controlled_state = { NOT = { has_state_flag = current_geno_menu_open } }
+			}
+		}
+		localization_key = "No State Selected"
+	}
+}

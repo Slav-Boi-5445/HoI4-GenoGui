@@ -1,0 +1,259 @@
+guiTypes = {
+	containerWindowType = {
+		name = "genocide_state_menu_container"
+		position = {x=8 y=245}
+		size = { width=350 height=400 }
+
+		fade_time = 200
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "Background"
+			spriteType = "GFX_genocide_menu_bg"
+		}
+
+		instantTextboxType = {
+			name = "title"
+			position = {x=13 y=7}
+			font = "hoi_18mbs"
+			text = "Genocide Menu"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		
+		containerWindowType = {
+			name = "removal_set_indicator_window"
+			position = { x= 0 y = 0 }
+			size = { width=220 height=150 }
+			clipping = yes
+			
+			iconType = {
+				name = "removal_level_set_indicator"
+				spriteType = "GFX_removal_level_set_indicator"
+				position = { x = 37 y = 111 }
+				alwaystransparent = yes
+			}
+		}
+		
+		buttonType = {
+			name = "close_genocide_menu_button" 
+			position = {x=286 y=8}
+			spriteType = "GFX_cancel_conversion_button"
+			pdx_tooltip = "close_genocide_menu_tooltip"
+			scale = 1
+		}
+		buttonType = {
+			name = "execute_genocide_button"
+			position = {x=25 y=50}
+			spriteType = "GFX_killed_units_icon"
+			pdx_tooltip = "execute_genocide_button_selected_tooltip_base"
+			scale = 1
+		}
+		buttonType = {
+			name = "cancel_genocide_button" 
+			position = {x=281 y=50}
+			spriteType = "GFX_production_prohibition_sign_icon"
+			pdx_tooltip = "cancel_genocide_button_tooltip"
+			scale = 1
+		}
+		buttonType = {
+			name = "level_one_removal_button"
+			position = {x=37 y=110}
+			spriteType = "GFX_decision_generic_arrest"
+			pdx_tooltip = "level_1_removal_button_tooltip"
+			scale = 1
+		}
+		buttonType = {
+			name = "level_two_removal_button" 
+			position = {x=75 y=110}
+			spriteType = "GFX_decision_eng_blackshirt_march"
+			pdx_tooltip = "level_2_removal_button_tooltip"
+			scale = 1
+		}
+		buttonType = {
+			name = "level_three_removal_button"
+			position = {x=115 y=110}
+			spriteType = "GFX_decision_generic_army_support"
+			pdx_tooltip = "level_3_removal_button_tooltip"
+			scale = 1
+		}
+		buttonType = {
+			name = "help_menu_button"
+			position = {x=30 y=170}
+			spriteType = "GFX_decision_generic_decision"
+			pdx_tooltip = "open_help_menu_button_tooltip"
+			scale = 1
+		}
+		buttonType = {
+			name = "info_menu_button"
+			position = {x=30 y=205}
+			spriteType = "GFX_decision_generic_operation"
+			pdx_tooltip = "open_info_menu_button_tooltip"
+			scale = 1
+		}
+		buttonType = {
+			name = "open_debug_menu_button"
+			position = {x=30 y=370}
+			spriteType = "GFX_decision_generic_army_support"
+			pdx_tooltip = "open_debug_menu_button_tooltip"
+			scale = 1
+		}
+		
+		
+		iconType = {
+			name = "genocide_bar_bg"
+			spriteType = "GFX_genocide_progress_bg"
+			position = { x = 80 y = 56 }
+			pdx_tooltip = "genocide_progress_bar_tooltip"
+		}
+		
+		iconType = {
+			name = "removal_status_indicator"
+			spriteType = "GFX_removal_status_indicator"
+			position = { x = 80 y = 76 }
+			pdx_tooltip = "removal_status_indicator_tooltip"
+		}
+		containerWindowType = {
+			name = "genocide_progress_bar"
+			position = { x= 80 y = 56 }
+			size = { width=300 height=80 }
+			clipping = yes
+			
+			iconType = {
+				name = "progress_bar"
+				spriteType = "GFX_genocide_progress"
+				position = { x= 0 y=0 }
+				alwaystransparent = yes
+			}
+			
+			instantTextboxType = {
+				name = "genocide_progression_current"
+				position = { x = 30 y = 20 }
+				font = "hoi_18mbs"
+				text = "[GetRemovalProgressionLevel123]"
+				maxWidth = 155
+				maxHeight = 20
+			}
+		}
+	}
+	
+	containerWindowType = {
+		name = "geno_debug_menu_thingy"
+		position = { x=0 y =0 }
+		size = { width=300 height=400 }
+		clipping = yes
+		
+		
+		instantTextboxType = {
+			name = "geno_debug_menu_thingy_title"
+			position = { x =90 y = 160 }
+			font = "hoi_18mbs"
+			text = "Debug stuff"
+			maxWidth = 155
+			maxHeight = 20
+		}
+		instantTextboxType = {
+			name = "test_pop_percent"
+			position = {x=72 y=184}
+			font = "hoi_18mbs"
+			text = "test_pop_percent" ##GetTempStatePopulationNegative and GetTempStatePopulationPositive
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		buttonType = {
+			name = "test_kill_button" 
+			position = {x=150 y=280}
+			spriteType = "GFX_cancel_conversion_button"
+			pdx_tooltip = "test_kill_button_tooltip"
+			scale = 1
+		}
+		buttonType = {
+			name = "test_up_stat_button"
+			position = {x=105 y=280}
+			spriteType = "GFX_cancel_conversion_button"
+			pdx_tooltip = "test_up_stat_button_tooltip"
+			scale = 1
+		}
+	}
+	containerWindowType = {
+		name = "geno_help_menu_container"
+		position = { x=0 y =0 }
+		size = { width=300 height=400 }
+		clipping = yes
+		
+		
+		instantTextboxType = {
+			name = "geno_help_menu_title"
+			position = { x =90 y = 160 }
+			font = "hoi_18mbs"
+			text = "Help Menu"
+			maxWidth = 155
+			maxHeight = 20
+		}
+		buttonType = {
+			name = "help_general_button"
+			position = {x=80 y=185}
+			spriteType = "GFX_decision_unknown"
+			pdx_tooltip = "help_general_button_tooltip"
+			scale = 1
+		}
+		buttonType = {
+			name = "help_removal_button"
+			position = {x=105 y=185}
+			spriteType = "GFX_decision_unknown"
+			pdx_tooltip = "help_removal_button_tooltip"
+			scale = 1
+		}
+		buttonType = {
+			name = "help_cancel_button"
+			position = {x=130 y=185}
+			spriteType = "GFX_decision_unknown"
+			pdx_tooltip = "help_cancel_button_tooltip"
+			scale = 1
+		}
+		buttonType = {
+			name = "help_close_button"
+			position = {x=155 y=185}
+			spriteType = "GFX_decision_unknown"
+			pdx_tooltip = "help_close_button_tooltip"
+			scale = 1
+		}
+		instantTextboxType = {
+			name = "geno_help_menu_text_box"
+			position = {x=67 y=213}
+			font = "hoi_18mbs"
+			text = "[GetHelpInfoGeno]"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+	}
+	containerWindowType = {
+		name = "geno_info_menu"
+		position = { x=0 y =0 }
+		size = { width=300 height=400 }
+		clipping = yes
+		
+		
+		instantTextboxType = {
+			name = "geno_info_menu_title"
+			position = { x =90 y = 160 }
+			font = "hoi_18mbs"
+			text = "Information Menu"
+			maxWidth = 155
+			maxHeight = 20
+		}
+		instantTextboxType = {
+			name = "geno_info_menu_desc"
+			position = {x=72 y=184}
+			font = "hoi_18mbs"
+			text = "geno_info_menu_desc"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+	}
+}

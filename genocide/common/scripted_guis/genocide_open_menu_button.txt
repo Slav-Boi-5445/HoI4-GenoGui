@@ -1,0 +1,46 @@
+scripted_gui = {
+	open_genocide_button = {
+	
+		context_type = selected_state_context
+		
+		window_name = "open_genocide_button_container"
+		
+		visible = {
+			ROOT = { 
+				OR = {
+				has_government = fascism
+				has_government = communism
+				}
+			}
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = current_geno_menu_open }
+		}
+		
+		effects = {
+			open_genocide_menu_button_click = {
+				if = {
+					limit = {
+						has_state_flag = current_geno_menu_open
+					}
+					clr_state_flag = current_geno_menu_open
+					else = {
+						set_state_flag = current_geno_menu_open
+					}
+				}
+				ROOT = { set_country_flag = geno_menu_open }
+				
+			}
+			
+		}
+		triggers = {
+			open_genocide_menu_button_click_enabled = {
+				ROOT = { NOT = { has_country_flag = geno_menu_open } }
+			}
+		}
+		properties = {
+			removal_status_indicator = {
+			frame = removal_status_state_level
+			}
+		}
+	}
+}

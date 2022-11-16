@@ -1,0 +1,79 @@
+guiTypes = {
+	containerWindowType = {
+		name = "open_genocide_button_container"
+		position = {x=3 y=410}
+		size = { width=220 height=280 }
+
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "Background"
+			spriteType = "GFX_open_genocide_menu_bg"
+		}
+
+		iconType = {
+			name = "removal_status_indicator"
+			spriteType = "GFX_removal_status_indicator"
+			position = { x = 177 y = 76 }
+			pdx_tooltip = "removal_status_indicator_tooltip"
+		}
+		#instantTextboxType = {
+		#	name = "title"
+		#	position = {x=20 y=-7}
+		#	font = "hoi_18mbs"
+		#	text = "Genocide Menu"
+		#	maxWidth = 340
+		#	maxHeight = 23
+		#	format = left
+		#}
+		
+		instantTextboxType = {
+			name = "do_trolling"
+			position = {x=16 y=20}
+			font = "hoi_18mbs"
+			text = "Genocide"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "current_state_selected"
+			position = {x=10 y=88}
+			font = "hoi_18mbs"
+			text = "[GetCurrentStateNameLoc]"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "current_state"
+			position = {x=14 y= 60}
+			font = "hoi_18mbs"
+			text = "Selected State"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		
+		buttonType = {
+			name = "open_genocide_menu_button" 
+			position = {x=170 y= 12}
+			shortcut = "ctrl+v"
+			spriteType = "GFX_open_genocide_menu_button"
+			pdx_tooltip = "open_genocide_menu_tooltip"
+			scale = 1
+		}
+		
+		#buttonType = {
+		#	name = "help_button" 
+		#	position = {x=130 y=1 }
+		#	spriteType = "GFX_decision_generic_decision"
+		#	pdx_tooltip = "help_button_tooltip"
+		#	scale = 1
+		#}
+		
+		
+	}
+}

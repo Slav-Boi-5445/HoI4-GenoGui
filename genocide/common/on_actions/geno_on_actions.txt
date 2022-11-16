@@ -1,0 +1,111 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_state = {
+				limit = { }
+			set_variable = { var = removal_status_bar_level value = 1 }
+			set_variable = { var = removal_status_state_level value = 1 }
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			every_country = {
+			IF = {
+				limit = {
+					has_country_flag = removal_in_progress
+				}
+				every_controlled_state = {
+					limit = {
+						has_state_flag = current_genocide
+						check_variable = { var = removal_level_set value = 2 compare = equals }
+					}
+					IF = {
+						limit = {
+							check_variable = { var = removal_status_bar_level value = 40 compare = less_than_or_equals }
+						}
+						add_to_variable = {
+							var = removal_status_bar_level
+							value = 0.01
+						}
+						else = {
+							add_to_variable = { var = removal_status_state_level value = 1 }
+							genocide_completion_effect = yes
+							set_state_flag = genocide_alert
+							controller = {
+							country_event = {
+								id = genocide.3
+							}
+							genocide_newsevent_effect_low = yes
+							}
+						}
+					}
+				}
+			}
+			IF = {
+				limit = {
+					has_country_flag = removal_in_progress
+				}
+				every_controlled_state = {
+					limit = {
+						has_state_flag = current_genocide
+						check_variable = { var = removal_level_set value = 3 compare = equals }
+					}
+					IF = {
+						limit = {
+							check_variable = { var = removal_status_bar_level value = 40 compare = less_than_or_equals }
+						}
+						add_to_variable = {
+							var = removal_status_bar_level
+							value = 0.03
+						}
+						else = {
+							add_to_variable = { var = removal_status_state_level value = 1 }
+							genocide_completion_effect = yes
+							set_state_flag = genocide_alert
+							controller = {
+							country_event = {
+								id = genocide.4
+							}
+							genocide_newsevent_effect_medium = yes
+							}
+						}
+					}
+				}
+			}
+			IF = {
+				limit = {
+					has_country_flag = removal_in_progress
+				}
+				every_controlled_state = {
+					limit = {
+						has_state_flag = current_genocide
+						check_variable = { var = removal_level_set value = 4 compare = equals }
+					}
+					IF = {
+						limit = {
+							check_variable = { var = removal_status_bar_level value = 40 compare = less_than_or_equals }
+						}
+						add_to_variable = {
+							var = removal_status_bar_level
+							value = 0.05
+						}
+						else = {
+							add_to_variable = { var = removal_status_state_level value = 1 }
+							genocide_completion_effect = yes
+							set_state_flag = genocide_alert
+							controller = {
+							country_event = {
+								id = genocide.5
+							}
+							genocide_newsevent_effect_high = yes
+							}
+						}
+					}
+				}
+			}
+			}
+		}
+		
+	}
+}
